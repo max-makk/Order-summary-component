@@ -1,0 +1,186 @@
+:root {
+  font-size: calc(0.6em + 1vw);
+  box-sizing: border-box;
+
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+
+  --medium: 500;
+  --bold: 700;
+  --black: 900;
+}
+
+@media (min-width: 50em) {
+  :root {
+    font-size: 1em;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  text-align: center;
+  font-weight: var(--medium);
+  min-height: 100vh;
+}
+.container {
+  max-width: 90em;
+  margin: 0 auto;
+}
+
+h1,
+h2 {
+  color: var(--dark-blue);
+}
+
+p {
+  color: var(--desaturated-blue);
+}
+
+.page-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url("../../images/pattern-background-mobile.svg");
+  background-color: var(--pale-blue);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 0 1.5em;
+}
+
+@media (min-width: 50em) {
+  .page-body {
+    background-image: url("../images/pattern-background-desktop.svg");
+  }
+}
+
+.card {
+  border-radius: 1em;
+  background: #fff;
+  background-image: url("../../images/illustration-hero.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 28.125em;
+  padding: 60% 2em 1em;
+  box-shadow: 0px 12px 15px rgba(56, 41, 224, 0.1);
+  margin-bottom: 1em;
+}
+
+
+@media (min-width: 50em) {
+    .card {
+        padding-left:3em;
+        padding-right:3em;
+    }
+}
+
+.card__title {
+    margin: 0;
+    font-size: 1.6rem;
+  display: inline-block;
+  font-weight: var(--black);
+}
+
+.card__description {
+    font-size: 1.2rem;
+    letter-spacing: 0.01em;
+    margin: 1em 0 0;
+    line-height: 1.5;
+}
+
+@media (min-width: 50em) {
+    .card__description {
+        font-size: 1.1rem;
+        padding: 0 0.5em;
+        letter-spacing: 0em;
+    }
+}
+
+.card__plan {
+    margin-top: 1.5em;
+  border-radius: 0.5em;
+  background-color: var(--very-pale-blue);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 25% 45% 30%;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 2.5em 2.5em;
+  align-items: center;
+  text-align: start;
+  row-gap: 0.5em;
+}
+
+.card__plan__image {
+  grid-row: 1 / 3;
+  justify-self: center;
+}
+
+.card__plan__label {
+    font-size: 1rem;
+  font-weight: var(--black);
+  height: 100%;
+  align-content: end;
+  display: grid;
+}
+
+.card__plan__price {
+    font-size: 1rem;
+  grid-column: 2 / 3;
+  height: 100%;
+  display: grid;
+  align-content: start;
+}
+
+.card__plan__link {
+    font-size: 0.9rem;
+    margin-top: -1em;
+    margin-right: 2em;
+  color: var(--bright-blue);
+  align-self: start;
+  justify-self: end;
+  font-weight: var(--bold);
+}
+
+.card__button {
+    margin-top: 2em;
+    font-size: 1rem;
+    padding: 1em 0;
+  border-radius: 0.5em;
+  display: block;
+  width: 100%;
+  border: none;
+  font-weight: var(--black);
+  cursor: pointer;
+}
+
+.card__button:hover,
+.card__plan__link:hover {
+  filter: opacity(70%);
+}
+
+.card__button--proceed {
+  background: var(--bright-blue);
+  color: #fff;
+  box-shadow: 0px 12px 15px rgba(56, 41, 224, 0.5);
+}
+
+.card__button--cancel {
+    margin-top: 1em;
+  background: transparent;
+  color: var(--desaturated-blue);
+}
+
+.card__button--cancel:hover {
+  filter: none;
+  color: var(--dark-blue);
+}
